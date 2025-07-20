@@ -15,32 +15,16 @@
   </div>
   
   <div class="row">
+    {{#each trips}}
     <div class="col-md-4">
       <div class="trip-card">
-        <img src="images/reef1.jpg" alt="Reef Diving" class="img-responsive">
-        <h3>Reef Diving Adventure</h3>
-        <p>Explore the underwater world with our expert diving guides.</p>
-        <p><strong>Price: $599</strong></p>
+        <img src="{{image}}" alt="{{name}}" class="img-responsive">
+        <h3>{{name}}</h3>
+        <p>{{description}}</p>
+        <p><strong>Price: ${{perPerson}}</strong></p>
       </div>
     </div>
-    
-    <div class="col-md-4">
-      <div class="trip-card">
-        <img src="images/reef2.jpg" alt="Island Paradise" class="img-responsive">
-        <h3>Island Paradise Getaway</h3>
-        <p>Relax on pristine beaches and enjoy tropical luxury.</p>
-        <p><strong>Price: $899</strong></p>
-      </div>
-    </div>
-    
-    <div class="col-md-4">
-      <div class="trip-card">
-        <img src="images/reef3.jpg" alt="Ocean Adventure" class="img-responsive">
-        <h3>Ocean Adventure Tour</h3>
-        <p>Experience the thrill of ocean adventures and water sports.</p>
-        <p><strong>Price: $749</strong></p>
-      </div>
-    </div>
+    {{/each}}
   </div>
 </div>
 
