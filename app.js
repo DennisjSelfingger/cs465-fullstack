@@ -5,9 +5,16 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require('hbs');
 
+// this connects the database
+require('./app_api/models/db');
+
+
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
 var travelRouter = require('./app_server/routes/travel');
+
+// routes for the apo
+var apiRouter = require('./app_api/routes/index');
 
 var app = express();
 
@@ -28,6 +35,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/travel', travelRouter);
 
+app.use('/api', apiRouter);
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -35,7 +45,7 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
+  // set locals, only providing error in development stage 
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 

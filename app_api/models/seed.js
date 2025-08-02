@@ -1,5 +1,5 @@
 const mongoose = require('./db');
-const Trip = require('./travlr');
+const Trip = require('../../app_server/models/travlr');
 const tripsData = require('../../data/trips.json');
 
 async function seed() {
