@@ -1,6 +1,4 @@
-// Comment out or remove these lines:
-// var fs = require('fs');
-// var trips = JSON.parse(fs.readFileSync('./data/trips.json','utf8'));
+
 
 const tripsEndpoint = 'http://localhost:3000/api/trips';
 const options = {
